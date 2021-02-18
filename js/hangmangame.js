@@ -38,7 +38,6 @@ function generateButtons() {
           ` + letter + `
         </button>
       `).join('');
-
     document.getElementById('keyboard').innerHTML = buttonsHTML;
 }
 
@@ -65,8 +64,10 @@ function updateHangmanPicture() {
 function checkIfGameWon() {
     if (wordStatus === answer) {
         document.getElementById('sound-win').play();
-        document.getElementById('keyboard').innerHTML =
-            document.getElementById('keyboard').innerHTML = alert("Congratulations!You won!");
+        document.getElementById('keyboard').innerHTML = "";
+        document.getElementById('keyboard').innerHTML = alert("Congratulations!You won!");
+        document.getElementById('keyboard').innerHTML = "Let's Play again! ";
+
 
     }
 }
@@ -74,9 +75,10 @@ function checkIfGameWon() {
 function checkIfGameLost() {
     if (mistakes === maxWrong) {
         document.getElementById('sound-lose').play();
-
         document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
         document.getElementById('keyboard').innerHTML = alert("Better luck next time... ");
+        document.getElementById('keyboard').innerHTML = "Let's Play again! ";
+
 
 
     }
