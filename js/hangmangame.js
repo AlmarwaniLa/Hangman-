@@ -18,7 +18,7 @@ let answer = '';
 let maxWrong = 6;
 let mistakes = 0;
 let guessed = [];
-let mySound;
+let audio;
 let wordStatus = null;
 
 
@@ -64,6 +64,7 @@ function updateHangmanPicture() {
 
 function checkIfGameWon() {
     if (wordStatus === answer) {
+        document.getElementById('sound-win').play();
         document.getElementById('keyboard').innerHTML =
             document.getElementById('keyboard').innerHTML = alert("Congratulations!You won!");
 
@@ -72,6 +73,8 @@ function checkIfGameWon() {
 
 function checkIfGameLost() {
     if (mistakes === maxWrong) {
+        document.getElementById('sound-lose').play();
+
         document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
         document.getElementById('keyboard').innerHTML = alert("Better luck next time... ");
 
