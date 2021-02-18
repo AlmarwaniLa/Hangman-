@@ -63,14 +63,16 @@ function updateHangmanPicture() {
 
 function checkIfGameWon() {
     if (wordStatus === answer) {
-        document.getElementById('keyboard').innerHTML = 'Congratulations! You won!';
+        document.getElementById('keyboard').innerHTML =
+            document.getElementById('keyboard').innerHTML = alert("Congratulations!You won!");
     }
 }
 
 function checkIfGameLost() {
     if (mistakes === maxWrong) {
         document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
-        document.getElementById('keyboard').innerHTML = 'Better luck next time...';
+        document.getElementById('keyboard').innerHTML = alert("Better luck next time... ");
+
     }
 
 
