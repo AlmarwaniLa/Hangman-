@@ -18,6 +18,7 @@ let answer = '';
 let maxWrong = 6;
 let mistakes = 0;
 let guessed = [];
+let mySound;
 let wordStatus = null;
 
 
@@ -65,6 +66,7 @@ function checkIfGameWon() {
     if (wordStatus === answer) {
         document.getElementById('keyboard').innerHTML =
             document.getElementById('keyboard').innerHTML = alert("Congratulations!You won!");
+
     }
 }
 
@@ -72,6 +74,7 @@ function checkIfGameLost() {
     if (mistakes === maxWrong) {
         document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
         document.getElementById('keyboard').innerHTML = alert("Better luck next time... ");
+
 
     }
 
